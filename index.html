@@ -240,6 +240,20 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
 .count .tline .n{font-family:var(--cond); font-size:1.9em; line-height:1; vertical-align:-.12em; margin-right:.12em}
 @keyframes tdraw{from{stroke-dashoffset:140}}
 @media (prefers-reduced-motion:reduce){ .count.go .tally path{animation:none} }
+
+/* ---------- industries donut ---------- */
+.mix{margin-top:72px}
+.mixh{font-family:var(--mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase; text-align:center; opacity:.85; margin:0 0 26px}
+.mixbody{display:flex; flex-wrap:wrap; gap:28px 56px; align-items:center; justify-content:center}
+.donut{width:min(240px,62vw); height:auto; flex:none}
+.donut circle{fill:none; stroke-width:22}
+.legend{list-style:none; margin:0; padding:0; display:grid; gap:12px; min-width:min(300px,100%)}
+.legend li{display:grid; grid-template-columns:14px 1fr auto; gap:12px; align-items:center; font-size:17px}
+.legend i{width:14px; height:14px; border-radius:3px; box-shadow:0 0 0 1px rgba(22,13,13,.35)}
+.legend b{font-family:var(--cond); font-weight:400; font-size:24px; letter-spacing:.02em; padding-left:18px}
+/* who shows up: calmer type */
+.role .w{font-size:clamp(34px, 5.6vw, 74px); line-height:1; -webkit-text-stroke-width:1.5px}
+.role button{padding:18px 0}
 </style>
 </head>
 <body>
@@ -329,6 +343,13 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
   <div class="marquee" aria-label="Brands Devi has worked with">
     <div class="tape t1"><div class="row" id="rowA"></div></div>
     <div class="tape t2"><div class="row alt" id="rowB"></div></div>
+  </div>
+  <div class="mix in">
+    <p class="mixh">Where I've worked</p>
+    <div class="mixbody">
+      <svg class="donut" viewBox="0 0 120 120" role="img" aria-label="Industries: Consumer brands / D2C 30%, Startups and SaaS 25%, Real estate and coworking 15%, Health and wellness 15%, Media and creators 15%"><g transform="rotate(-90 60 60)"><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--ink)" stroke-dasharray="28.8 71.2" stroke-dashoffset="0"/><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--white)" stroke-dasharray="23.8 76.2" stroke-dashoffset="-30"/><circle cx="60" cy="60" r="44" pathLength="100" stroke="#8f0b29" stroke-dasharray="13.8 86.2" stroke-dashoffset="-55"/><circle cx="60" cy="60" r="44" pathLength="100" stroke="#ffb8c6" stroke-dasharray="13.8 86.2" stroke-dashoffset="-70"/><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--paper)" stroke-dasharray="13.8 86.2" stroke-dashoffset="-85"/></g></svg>
+      <ul class="legend"><li><i style="background:var(--ink)"></i><span>Consumer brands / D2C</span><b>30%</b></li><li><i style="background:var(--white)"></i><span>Startups &amp; SaaS</span><b>25%</b></li><li><i style="background:#8f0b29"></i><span>Real estate &amp; coworking</span><b>15%</b></li><li><i style="background:#ffb8c6"></i><span>Health &amp; wellness</span><b>15%</b></li><li><i style="background:var(--paper)"></i><span>Media &amp; creators</span><b>15%</b></li></ul>
+    </div>
   </div>
   <p class="mukesh in">Worked alongside Mukesh Bansal, founder of Cult.fit and Myntra, across his portfolio.</p>
   <p class="mukesh in" style="margin-top:10px">Ran Reddit marketing for <b>Verte</b>, a watch brand.</p>
