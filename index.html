@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Devishree A. Every founder has two brains. I am the second one.">
+<title>Devification</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600&family=Jost:wght@400;500;600&family=Shrikhand&display=swap">
+<style>
+/* Layout: one statement per screen. Black, red and blush-paper bands; a quiet hero: one founder thought at a time, answered by Devi; almost no running text. */
+:root{
+  --ink:#160d0d;         /* near-black ground */
+  --red:#de0f3f;         /* crimson */
+  --paper:#f5f5dc;       /* beige */
+  --white:#ffffff;
+  --blush:#e9b9a8;       /* tiny tagline only */
+  --dim:#a8958d;
+  --script:"Shrikhand", "Cooper Black", Georgia, serif;
+  --cond:"Anton", "Impact", "Arial Narrow", sans-serif;
+  --body:"Jost", "Futura", "Century Gothic", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink); color:var(--white); font-family:var(--body); font-size:17px; line-height:1.5; -webkit-font-smoothing:antialiased}
+a{color:inherit}
+p{margin:0}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--blush); outline-offset:3px; border-radius:6px}
+.band{
+  position:relative;
+  padding-left:max(20px, env(safe-area-inset-left, 0px));
+  padding-right:max(20px, env(safe-area-inset-right, 0px));
+}
+.in{max-width:1200px; margin:0 auto}
+.tiny{font-size:13px; letter-spacing:.06em}
+
+/* ---------- hero: one founder thought at a time ---------- */
+.hero{background:var(--ink); color:var(--white); min-height:min(860px, 100svh); display:grid; grid-template-rows:auto 1fr auto; gap:24px; padding-block:24px}
+.bar{display:flex; justify-content:space-between; align-items:flex-start; gap:16px}
+.social{display:flex; gap:14px; align-items:center}
+.social a{display:grid; place-items:center; width:24px; height:24px}
+.social svg{width:20px; height:20px; fill:var(--white)}
+.addr{display:block; font-size:11px; margin-top:6px; color:var(--dim)}
+.mark{font-family:var(--script); font-size:22px; line-height:.9; text-align:right; color:var(--white)}
+.mark small{display:block; font-family:var(--body); font-size:11px; letter-spacing:.04em; margin-top:2px; color:var(--dim)}
+.note{align-self:center; width:100%; max-width:880px; margin:0 auto}
+.note .when{font:500 12px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase; color:var(--dim)}
+.note .q{font-family:var(--mono); font-weight:400; font-size:clamp(26px, 4.4vw, 54px); line-height:1.2; margin:18px 0 0; min-height:2.4em; color:var(--white)}
+.note .q .caret{display:inline-block; width:.5em; height:1em; vertical-align:-.12em; background:var(--red); margin-left:2px}
+@media (prefers-reduced-motion: no-preference){ .note .q .caret{animation:blink 1s steps(1) infinite} }
+@keyframes blink{50%{opacity:0}}
+.note .a{margin-top:22px; display:flex; gap:14px; align-items:baseline; font-size:clamp(18px, 2vw, 24px); line-height:1.4; color:var(--blush); min-height:2.8em; transition:opacity .5s}
+.note .a .by{flex:none; font-family:var(--script); color:var(--red); font-size:1.15em}
+.note .a.off{opacity:0}
+.foot{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap}
+.foot .say{font-family:var(--cond); text-transform:uppercase; font-size:clamp(30px, 4vw, 56px); line-height:.94; margin:0}
+.foot .say span{color:var(--red)}
+.foot .gtm{margin-top:14px; font-size:clamp(16px, 1.6vw, 20px); color:var(--dim)}
+.foot .gtm b{color:var(--white); font-weight:500}
+.foot .down{font:600 12px/1 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--dim); text-decoration:none}
+
+/* ---------- statement bands ---------- */
+.big{font-family:var(--cond); font-weight:400; text-transform:uppercase; line-height:.88; letter-spacing:.005em; margin:0; text-wrap:balance}
+.red{background:var(--red); color:var(--white)}
+.paper{background:var(--paper); color:var(--ink)}
+.ink{background:var(--ink); color:var(--white)}
+
+.count{padding-block:120px; text-align:center; overflow:hidden}
+.count .n{font-family:var(--cond); font-size:clamp(150px, 34vw, 420px); line-height:.8; font-variant-numeric:tabular-nums}
+.count p{margin-top:22px; font-size:clamp(18px, 2.2vw, 24px)}
+
+.brief{padding-block:130px}
+.brief .big{font-size:clamp(56px, 10.5vw, 150px); max-width:11ch}
+.brief .big span{color:var(--red); -webkit-text-stroke:0}
+.brief .sub{margin-top:34px; max-width:44ch; color:var(--dim); font-size:18px}
+.brief .sub b{color:var(--white); font-weight:500}
+
+/* ---------- who shows up ---------- */
+.who{padding-block:110px}
+.who h2{font-family:var(--script); font-weight:400; font-size:clamp(34px, 5vw, 56px); margin:0 0 40px; color:var(--red); transform:rotate(-3deg); transform-origin:left}
+.roles{list-style:none; margin:0; padding:0; border-top:2px solid var(--ink)}
+.role{border-bottom:2px solid var(--ink)}
+.role button{
+  all:unset; box-sizing:border-box; cursor:pointer; width:100%;
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,340px); gap:8px 32px; align-items:center; padding:14px 0;
+}
+.role .w{
+  font-family:var(--cond); text-transform:uppercase; font-size:clamp(52px, 10vw, 136px); line-height:.9;
+  color:transparent; -webkit-text-stroke:2px var(--ink); transition:color .25s;
+}
+.role .p{font-size:16px; line-height:1.4; opacity:0; transform:translateX(-8px); transition:opacity .3s, transform .3s}
+.role.on .w, .role button:hover .w, .role button:focus-visible .w{color:var(--red); -webkit-text-stroke-color:var(--red)}
+.role.on .p{opacity:1; transform:none}
+.role button:focus-visible{outline:none}
+
+/* ---------- numbers ---------- */
+.nums{padding-block:110px}
+.grid5{display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:0; border-top:1px solid #352728}
+.num{padding:28px 18px 0 0; border-right:1px solid #352728; min-width:0}
+.num:last-child{border-right:0}
+.num + .num{padding-left:18px}
+.num .v{font-family:var(--cond); font-size:clamp(46px, 6vw, 84px); line-height:1; font-variant-numeric:tabular-nums}
+.num .v small{font-size:.45em; color:var(--dim)}
+.num .c{margin-top:10px; color:var(--dim); font-size:15px; line-height:1.35}
+.nums h2{font-family:var(--script); font-weight:400; font-size:clamp(30px, 4vw, 46px); margin:0 0 36px; transform:rotate(-3deg); transform-origin:left}
+
+/* ---------- clients ---------- */
+.clients{padding-block:100px 110px; overflow:hidden}
+.clients .big{font-size:clamp(90px, 22vw, 300px); text-align:center}
+.clients .lede{text-align:center; margin-top:14px; font-size:clamp(18px, 2.2vw, 24px)}
+.marquee{margin-top:56px; display:grid; gap:14px; margin-left:calc(-1 * max(20px, env(safe-area-inset-left, 0px))); margin-right:calc(-1 * max(20px, env(safe-area-inset-right, 0px)))}
+.row{display:flex; width:max-content; gap:0}
+.row span{font-family:var(--cond); text-transform:uppercase; font-size:clamp(28px, 4vw, 48px); line-height:1.1; padding:0 22px; white-space:nowrap; display:flex; align-items:center; gap:44px}
+.row span::after{content:"✺"; font-family:var(--body); font-size:.55em; opacity:.6}
+.row.alt span{color:transparent; -webkit-text-stroke:1.5px var(--white)}
+@media (prefers-reduced-motion: no-preference){
+  .row{animation:slide 110s linear infinite}
+  .row.alt{animation-direction:reverse; animation-duration:130s}
+  .marquee:hover .row{animation-play-state:paused}
+}
+@keyframes slide{to{transform:translateX(-50%)}}
+.mukesh{margin-top:64px; text-align:center; font-size:16px; opacity:.85}
+
+/* ---------- end ---------- */
+.end{padding-block:130px 110px; text-align:center}
+.end .big{font-size:clamp(90px, 20vw, 260px); color:var(--red)}
+.end .lede{font-size:clamp(20px, 2.6vw, 30px); margin-top:14px; text-wrap:balance}
+.reach{margin-top:44px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+.pill{display:inline-flex; align-items:center; gap:10px; border:2px solid var(--ink); border-radius:999px; padding:12px 20px; font-weight:500; font-size:15px; text-decoration:none; background:none; color:var(--ink); cursor:pointer; max-width:100%; overflow-wrap:anywhere}
+.pill.solid{background:var(--ink); color:var(--paper)}
+.pill:hover{background:var(--red); border-color:var(--red); color:var(--white)}
+footer{padding-block:22px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:12px; color:var(--dim)}
+
+@media (max-width:820px){
+  .grid5{grid-template-columns:repeat(2, minmax(0,1fr))}
+  .num, .num + .num{padding:24px 14px 26px 0; border-right:0; border-bottom:1px solid #352728}
+  .num:nth-child(even){padding-left:14px; border-left:1px solid #352728}
+  .num:last-child{grid-column:span 2; border-bottom:0}
+  .role button{grid-template-columns:1fr}
+  .role .p{opacity:1; transform:none; display:none; padding-bottom:6px}
+  .role.on .p{display:block}
+}
+
+/* ---------- grain + cursor ---------- */
+body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.09; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cur{position:fixed; left:0; top:0; width:14px; height:14px; margin:-7px 0 0 -7px; border-radius:50%; background:var(--red); pointer-events:none; z-index:60;
+  display:grid; place-items:center; font:600 10px/1 var(--mono); letter-spacing:.08em; color:var(--white); text-transform:uppercase;
+  transition:width .25s, height .25s, margin .25s, background .25s; opacity:0}
+.cur.big{width:64px; height:64px; margin:-32px 0 0 -32px}
+.cur span{opacity:0; transition:opacity .2s}
+.cur.big span{opacity:1}
+@media (pointer:fine){ .cur{opacity:1} }
+
+/* ---------- ring of names around 22 ---------- */
+.ringwrap{position:relative; width:min(560px, 100%); aspect-ratio:1; margin:0 auto; display:grid; place-items:center; max-width:100%}
+.ring{position:absolute; inset:0; width:100%; height:100%}
+.ring text{font-family:var(--cond); font-size:22px; letter-spacing:.14em; fill:var(--white); text-transform:uppercase}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+.count .n{position:relative; font-size:clamp(150px, 30vw, 300px)}
+
+/* ---------- scribble + aside ---------- */
+.brief .big .scrib{position:relative; display:inline-block; color:var(--red)}
+.scrib svg{position:absolute; left:-4%; bottom:-.12em; width:108%; height:.42em; overflow:visible}
+.scrib path{fill:none; stroke:var(--white); stroke-width:7; stroke-linecap:round; stroke-dasharray:900; stroke-dashoffset:0}
+.brief.draw .scrib path{animation:draw 1.1s .2s cubic-bezier(.6,.1,.2,1) both}
+@keyframes draw{from{stroke-dashoffset:900}}
+.aside{display:inline-block; font-family:var(--script); text-transform:none; color:var(--blush); font-size:.36em; transform:rotate(-8deg) translateY(-.4em); margin-left:.25em; letter-spacing:0}
+
+/* ---------- sticker following cursor ---------- */
+.sticker{position:fixed; left:0; top:0; z-index:40; pointer-events:none; width:270px; padding:18px 18px 20px; background:var(--red); color:var(--white);
+  border-radius:4px; box-shadow:0 18px 40px rgba(17,11,11,.25); transform:translate(-9999px,0); font-size:15px; line-height:1.35}
+.sticker b{display:block; font:600 11px/1 var(--mono); letter-spacing:.14em; text-transform:uppercase; margin-bottom:10px; opacity:.85}
+.sticker::before{content:""; position:absolute; top:-10px; left:50%; width:70px; height:20px; margin-left:-35px; background:rgba(255,255,255,.55); transform:rotate(-4deg)}
+@media (pointer:fine) and (min-width:821px){
+  .role .p{display:none}
+}
+
+/* ---------- receipt ---------- */
+.nums .in{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,420px); gap:48px; align-items:center}
+.nums h2{font-family:var(--cond); text-transform:uppercase; transform:none; font-size:clamp(64px, 10vw, 150px); line-height:.88; margin:0}
+.nums h2 em{display:block; font-family:var(--script); text-transform:none; font-style:normal; color:var(--red); font-size:.4em; transform:rotate(-4deg); transform-origin:left; margin-top:12px}
+.receipt{position:relative; background:var(--paper); color:var(--ink); font-family:var(--mono); font-size:13.5px; line-height:1.55;
+  padding:30px 26px 34px; transform:rotate(2.5deg); transition:transform .4s; min-width:0;
+  -webkit-mask:radial-gradient(circle 7px at 50% 100%, transparent 98%, #000) bottom/18px 100% repeat-x, linear-gradient(#000,#000) top/100% calc(100% - 7px) no-repeat;
+          mask:radial-gradient(circle 7px at 50% 100%, transparent 98%, #000) 0 100%/18px 14px repeat-x, linear-gradient(#000,#000) top/100% calc(100% - 7px) no-repeat}
+.receipt:hover{transform:rotate(0deg)}
+.receipt .hd{text-align:center; font-weight:600; letter-spacing:.12em}
+.receipt .sm{text-align:center; font-size:11.5px; opacity:.7}
+.receipt hr{border:0; border-top:1.5px dashed var(--ink); opacity:.5; margin:14px 0}
+.receipt .ln{display:flex; gap:8px; align-items:baseline}
+.receipt .ln span:first-child{flex:none}
+.receipt .ln i{flex:1; border-bottom:1.5px dotted rgba(17,11,11,.45); transform:translateY(-4px); min-width:12px}
+.receipt .ln span:last-child{flex:none; font-weight:600; font-variant-numeric:tabular-nums}
+.receipt .tot{font-size:17px}
+.receipt .tot span:last-child{color:var(--red)}
+.bars{height:46px; margin-top:16px; background:repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 7px, transparent 7px 9px, var(--ink) 9px 10px, transparent 10px 14px)}
+
+/* ---------- client tapes ---------- */
+.marquee{gap:0; margin-top:70px}
+.row{padding-block:10px}
+.tape{width:110%; margin-left:-5%; overflow:hidden; box-shadow:0 10px 24px rgba(17,11,11,.18)}
+.t1{background:var(--white); color:var(--red); transform:rotate(-3deg); position:relative; z-index:1}
+.t2{background:var(--ink); transform:rotate(2deg); margin-top:22px}
+.row.alt span{color:var(--white); -webkit-text-stroke:0}
+.row span::after{content:"✺"}
+
+/* ---------- curious ---------- */
+.end .big .q{display:inline-block; font-family:var(--script); transform-origin:50% 85%}
+.end .big .q{transform:rotate(8deg)}
+@media (prefers-reduced-motion: no-preference){ .end .big .q{animation:ponder 4.2s ease-in-out infinite} }
+/* rests tilted, then every few seconds hops and cocks its head, like a thought landing */
+@keyframes ponder{
+  0%,62%{transform:rotate(8deg)}
+  70%{transform:translateY(-.16em) rotate(-12deg)}
+  78%{transform:translateY(0) rotate(16deg)}
+  86%{transform:rotate(3deg)}
+  93%,100%{transform:rotate(8deg)}
+}
+
+@media (max-width:820px){
+  .nums .in{grid-template-columns:1fr}
+  .receipt{transform:rotate(1.5deg)}
+}
+
+</style>
+</head>
+<body>
+
+
+<header class="band hero" id="hero">
+  <div class="bar">
+    <div>
+      <div class="social">
+        <a href="https://linkedin.com/in/devishreea" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg></a>
+        <a href="https://x.com/thedevification" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77zm-1.08 16.2h1.7L7.4 4.7H5.57z"/></svg></a>
+      </div>
+      <span class="addr">work.devishree@gmail.com</span>
+    </div>
+    <div class="mark">devification<small>a founder's second brain</small></div>
+  </div>
+
+  <div class="note" aria-live="polite">
+    <div class="when">A founder's head · <span id="now">11:47 pm</span></div>
+    <h1 class="q" id="q">need someone who thinks like a founder<span class="caret"></span></h1>
+    <p class="a" id="a"><span class="by">Devi</span><span id="at">Worked alongside Mukesh Bansal, founder of Cult.fit and Myntra.</span></p>
+  </div>
+
+  <div class="foot">
+    <div>
+      <p class="say">Every founder has two brains.<br><span>I'm the second one.</span></p>
+      <p class="gtm">I take your brand to market. <b>GTM, end to end.</b></p>
+    </div>
+    <a class="down" href="#n22">Scroll ↓</a>
+  </div>
+</header>
+
+<section class="band red count">
+  <div class="in">
+    <div class="ringwrap">
+      <svg class="ring" viewBox="0 0 500 500" aria-hidden="true"><defs><path id="circ" d="M250,250 m-215,0 a215,215 0 1,1 430,0 a215,215 0 1,1 -430,0"/></defs><text><textPath href="#circ" id="ringtext" textLength="1340" lengthAdjust="spacing"></textPath></text></svg>
+      <div class="n" id="n22">22</div>
+    </div>
+    <p>brands built alongside their founders, from early stage to unicorn.</p>
+  </div>
+</section>
+
+<section class="band ink brief" id="brief">
+  <div class="in">
+    <h2 class="big">I don't wait for <span class="scrib">the brief.<svg viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 26 C 80 6, 150 38, 220 20 S 340 8, 396 22"/></svg></span><span class="aside">(I write it.)</span></h2>
+    <p class="sub">I find the gap and close it. GTM, product testing, user calls, a new market, the team. <b>Whatever nobody owns yet.</b></p>
+  </div>
+</section>
+
+<section class="band paper who">
+  <div class="in">
+    <h2>who shows up?</h2>
+    <ul class="roles" id="roles">
+      <li class="role on"><button type="button" id="r1"><span class="w">Operator</span><span class="p">Built a marketing function from zero. Team, systems, all of it.</span></button></li>
+      <li class="role"><button type="button" id="r2"><span class="w">Host</span><span class="p">170+ community events, 40+ emceed.</span></button></li>
+      <li class="role"><button type="button" id="r3"><span class="w">Storyteller</span><span class="p">Grew X channels to 100K impressions in 30 days. Grew a channel from 0 to 10K.</span></button></li>
+      <li class="role"><button type="button" id="r4"><span class="w">Room-builder</span><span class="p">A 300+ member community that brought in 80% of clients.</span></button></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band ink nums">
+  <div class="in">
+    <h2>Memory<em>what the second brain remembers.</em></h2>
+    <div class="receipt" role="img" aria-label="A shop receipt listing Devi's results">
+      <div class="hd">DEVIFICATION &amp; CO.</div>
+      <div class="sm">BENGALURU · EST. 2019 · NO BRIEF REQUIRED</div>
+      <hr>
+      <div class="ln"><span>ONE CAMPAIGN</span><i></i><span>10,000,000 IMPR</span></div>
+      <div class="ln"><span>X, FIRST 30 DAYS</span><i></i><span>100K IMPR</span></div>
+      <div class="ln"><span>CREATORS × 163</span><i></i><span>₹0.02 CPV</span></div>
+      <div class="ln"><span>REVENUE, ONE QTR</span><i></i><span>₹20,00,000</span></div>
+      <div class="ln"><span>COMMUNITY EVENTS</span><i></i><span>170+</span></div>
+      <div class="ln"><span>COMMUNITY</span><i></i><span>300+ PPL</span></div>
+      <hr>
+      <div class="ln"><span>BRIEFS RECEIVED</span><i></i><span>0</span></div>
+      <div class="ln tot"><span>TOTAL</span><i></i><span>1 DEVI</span></div>
+      <hr>
+      <div class="sm">THANK YOU · COME AGAIN</div>
+      <div class="bars"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band red clients">
+  <div class="in">
+    <h2 class="big">Clients</h2>
+    <p class="lede">whose second brain I've been.</p>
+  </div>
+  <div class="marquee" aria-label="Brands Devi has worked with">
+    <div class="tape t1"><div class="row" id="rowA"></div></div>
+    <div class="tape t2"><div class="row alt" id="rowB"></div></div>
+  </div>
+  <p class="mukesh in">Worked alongside Mukesh Bansal, founder of Cult.fit and Myntra, across his portfolio.</p>
+  <p class="mukesh in" style="margin-top:10px">Right now, I'm running GTM for <b>New Religion</b>.</p>
+</section>
+
+<section class="band paper end" id="say-hi">
+  <div class="in">
+    <h2 class="big">Curious<span class="q">?</span></h2>
+    <p class="lede">Tell me what's been stuck in your head.</p>
+    <div class="reach">
+      <button class="pill solid" type="button" id="copy">work.devishree@gmail.com</button>
+      <a class="pill" href="https://linkedin.com/in/devishreea" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="pill" href="https://x.com/thedevification" target="_blank" rel="noopener">X · @thedevification ↗</a>
+      <a class="pill" href="/ghostwriting">Ghostwriting ↗</a>
+    </div>
+  </div>
+</section>
+<div class="cur" id="cur" aria-hidden="true"><span>hi</span></div>
+<div class="sticker" id="sticker" aria-hidden="true"><b>on record</b><span></span></div>
+<footer class="band ink"><span>Devishree A · Bengaluru</span><span>English · हिन्दी · ಕನ್ನಡ · తెలుగు · தமிழ்</span></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- hero: one thought at a time ---------- */
+  // the night moves on with each thought
+  var TIMES = ["11:47 pm","12:18 am","12:52 am","1:34 am","2:09 am","2:51 am","3:30 am"], nowEl=document.getElementById("now");
+  var T = [
+    ["need someone who thinks like a founder", "Worked alongside Mukesh Bansal, founder of Cult.fit and Myntra."],
+    ["how do we scale creators without burning the budget?", "Ran 163 creator collabs at ₹0.02 per view."],
+    ["we need a community, not an audience", "Ran 170+ community events and grew a 300+ member community."],
+    ["our X account is a ghost town", "Took SparX on X from zero to 100K impressions in 30 days."],
+    ["who's building the marketing team?", "Built a marketing function from zero. Team, systems, all of it."],
+    ["I should post on LinkedIn more", "Turned founder posts into ₹20 lakh for Ethera in one quarter."],
+    ["what are we forgetting?", "Already on it."]
+  ];
+  var qEl=document.getElementById("q"), aEl=document.getElementById("a"), atEl=document.getElementById("at"), ti=0;
+  function setQ(txt){ qEl.innerHTML=""; qEl.appendChild(document.createTextNode(txt)); var c=document.createElement("span"); c.className="caret"; qEl.appendChild(c); }
+  function show(i){
+    var q=T[i][0], k=0; aEl.classList.add("off");
+    setTimeout(function(){
+      atEl.textContent=T[i][1]; nowEl.textContent=TIMES[i % TIMES.length];
+      (function type(){ setQ(q.slice(0,k)); if (k++<q.length) setTimeout(type, 45); else setTimeout(function(){ aEl.classList.remove("off"); }, 500); })();
+    }, 500);
+  }
+  if (!reduce) setInterval(function(){ ti=(ti+1)%T.length; show(ti); }, 6000);
+
+  /* ---------- counter ---------- */
+  var n = document.getElementById("n22");
+  if (!reduce && "IntersectionObserver" in window){
+    var done=false;
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting && !done){ done=true; var t0=performance.now();
+          (function tick(t){ var k=Math.min(1,(t-t0)/1100); n.textContent=Math.round(22*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(tick); })(t0);
+        }
+      });
+    },{threshold:.5}).observe(n);
+  }
+
+  /* ---------- roles ---------- */
+  var roles = document.querySelectorAll(".role");
+  roles.forEach(function(li){
+    var b = li.querySelector("button");
+    function on(){ roles.forEach(function(x){x.classList.toggle("on", x===li)}); }
+    b.addEventListener("click", on); b.addEventListener("mouseenter", on); b.addEventListener("focus", on);
+  });
+
+  /* ---------- clients marquee ---------- */
+  var A = ["Meraki Labs","SparX","New Religion","Ethera Diamonds","DreamBook","DhyanHQ","TechSpace","Pizza Hut","Urban Vault","Woktoss","FitEduCoach","ZOI8 Wellness","Recotap","Shipsy","Vahan"];
+  var B = ["iNFLUX","Rizzl","Introbot","BizzHub Offices","Buzzlab","Together with Kai","Verte","LamheNow","Omongo","Kalankit","Little Woods","Bossma × Zoho","Listed","Empower IAS","Triptam Labs","ZoloStays","ArtGalore"];
+  function fill(id, list){ var el=document.getElementById(id), html=list.concat(list).map(function(s){return "<span>"+s+"</span>"}).join(""); el.innerHTML=html; }
+  fill("rowA", A); fill("rowB", B);
+
+  /* ---------- ring of names ---------- */
+  document.getElementById("ringtext").textContent = ["Meraki Labs","SparX","New Religion","Ethera Diamonds","TechSpace","Pizza Hut","Urban Vault","Shipsy","Recotap"].join(" ✺ ") + " ✺";
+
+  /* ---------- scribble draws when seen ---------- */
+  var brief=document.getElementById("brief");
+  if (!reduce && "IntersectionObserver" in window){
+    new IntersectionObserver(function(es,o){ es.forEach(function(e){ if(e.isIntersecting){ brief.classList.add("draw"); o.disconnect(); } }); },{threshold:.4}).observe(brief);
+  }
+
+  /* ---------- cursor + sticker ---------- */
+  var fine = window.matchMedia && matchMedia("(pointer:fine)").matches;
+  if (fine){
+    var cur=document.getElementById("cur"), st=document.getElementById("sticker"), stT=st.querySelector("span");
+    var mx=-100,my=-100,cx=-100,cy=-100,sx=-9999,sy=0,showSt=false,rot=-4;
+    document.addEventListener("pointermove", function(e){ mx=e.clientX; my=e.clientY; });
+    document.addEventListener("pointerover", function(e){
+      var t=e.target.closest("a,button");
+      cur.classList.toggle("big", !!t);
+      cur.querySelector("span").textContent = t ? (t.id==="copy" ? "copy" : t.closest(".role") ? "look" : false ? "" : "go") : "";
+      var r=e.target.closest(".role");
+      if (r && innerWidth>820){ stT.textContent=r.querySelector(".p").textContent; showSt=true; rot = [-4,3,-2,5][Array.prototype.indexOf.call(roles,r)%4]; }
+      else showSt=false;
+    });
+    (function tick(){
+      cx+=(mx-cx)*.35; cy+=(my-cy)*.35;
+      cur.style.transform="translate("+cx+"px,"+cy+"px)";
+      if (showSt){ sx = sx<-5000 ? mx : sx+(mx+28-sx)*.15; sy+=(my+24-sy)*.15; st.style.transform="translate("+sx+"px,"+sy+"px) rotate("+rot+"deg)"; }
+      else { sx=-9999; st.style.transform="translate(-9999px,0)"; }
+      requestAnimationFrame(tick);
+    })();
+  }
+
+  /* ---------- copy ---------- */
+  var btn=document.getElementById("copy"), label=btn.textContent;
+  btn.addEventListener("click", function(){
+    var addr="work.devishree@gmail.com";
+    function fallback(){ btn.textContent=addr; var r=document.createRange(); r.selectNodeContents(btn); var s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+    try{ navigator.clipboard.writeText(addr).then(function(){ btn.textContent="Copied ✓"; setTimeout(function(){btn.textContent=label},1800); }, fallback); }catch(e){ fallback(); }
+  });
+})();
+</script>
+
+</body>
+</html>
