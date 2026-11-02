@@ -33,6 +33,10 @@ p{margin:0}
 .hero h1{font-family:var(--serif); font-weight:400; font-size:clamp(54px, 10vw, 120px); line-height:.98; letter-spacing:-.02em; margin:0}
 .hero h1 em{color:var(--red)}
 .hero .sub{margin-top:32px; max-width:440px; color:var(--soft)}
+.hero{display:grid; grid-template-columns:minmax(0,1fr); gap:44px; align-items:center}
+.hero .me{margin:0; width:min(300px,72%); aspect-ratio:5/6; border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 30px 80px -30px rgba(222,15,63,.45)}
+.hero .me img{display:block; width:100%; height:100%; object-fit:cover}
+@media (min-width:820px){ .hero{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)} .hero .me{width:100%; max-width:360px; justify-self:end} }
 
 .voices{border-top:1px solid var(--line)}
 .v{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px 32px; padding:38px 0; border-bottom:1px solid var(--line)}
@@ -97,8 +101,11 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
   </div>
 
   <section class="hero">
+    <div>
     <h1>Their name.<br><em>My words.</em></h1>
     <p class="sub">Hi, I'm Devi. I write LinkedIn and X posts for founders, in their voice, so they don't have to find the time. You've probably read a few. You just didn't know they were mine.</p>
+    </div>
+    <figure class="me"><img src="gw/devi.jpg" alt="Devi at a podcast desk, smiling, mic in front of her" width="700" height="840"></figure>
   </section>
 
   <section class="voices band">
