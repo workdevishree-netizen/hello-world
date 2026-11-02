@@ -228,6 +228,18 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
   .receipt{transform:rotate(1.5deg)}
 }
 
+
+/* ---------- page 2: tally of brands ---------- */
+.count{padding-block:clamp(90px,16vh,160px); text-align:left}
+.tally{--u:clamp(64px, 14vw, 200px); display:flex; flex-wrap:wrap; gap:clamp(14px,3vw,40px) clamp(18px,3.4vw,48px); align-items:flex-end}
+.tally .tg{height:auto; overflow:visible; transform:rotate(-2deg)}
+.tally .tg:nth-child(2n){transform:rotate(1.5deg)}
+.tally path{fill:none; stroke:var(--white); stroke-width:7; stroke-linecap:round; stroke-dasharray:140; stroke-dashoffset:0}
+.count.go .tally path{animation:tdraw .45s calc(var(--i)*70ms) cubic-bezier(.6,.1,.2,1) both}
+.count .tline{margin-top:clamp(28px,5vw,56px); max-width:640px; font-size:clamp(18px,2.2vw,24px); line-height:1.35}
+.count .tline .n{font-family:var(--cond); font-size:1.9em; line-height:1; vertical-align:-.12em; margin-right:.12em}
+@keyframes tdraw{from{stroke-dashoffset:140}}
+@media (prefers-reduced-motion:reduce){ .count.go .tally path{animation:none} }
 </style>
 </head>
 <body>
@@ -260,13 +272,10 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
   </div>
 </header>
 
-<section class="band red count">
+<section class="band red count" id="count">
   <div class="in">
-    <div class="ringwrap">
-      <svg class="ring" viewBox="0 0 500 500" aria-hidden="true"><defs><path id="circ" d="M250,250 m-215,0 a215,215 0 1,1 430,0 a215,215 0 1,1 -430,0"/></defs><text><textPath href="#circ" id="ringtext" textLength="1340" lengthAdjust="spacing"></textPath></text></svg>
-      <div class="n" id="n22">22</div>
-    </div>
-    <p>brands built alongside their founders, from early stage to unicorn.</p>
+    <div class="tally" role="img" aria-label="22 tally marks"><svg class="tg" viewBox="0 0 110 120" style="width:calc(var(--u)*1.000)"><path style="--i:0" d="M13 7 Q14 56 15 107"/><path style="--i:1" d="M34 10 Q30 57 31 109"/><path style="--i:2" d="M58 13 Q57 63 55 108"/><path style="--i:3" d="M80 9 Q84 57 84 106"/><path style="--i:4" d="M2 88 Q48 55 96 19"/></svg><svg class="tg" viewBox="0 0 110 120" style="width:calc(var(--u)*1.000)"><path style="--i:5" d="M13 11 Q14 57 14 109"/><path style="--i:6" d="M34 8 Q34 59 36 109"/><path style="--i:7" d="M58 8 Q57 60 60 112"/><path style="--i:8" d="M80 13 Q84 58 82 108"/><path style="--i:9" d="M2 91 Q47 59 96 27"/></svg><svg class="tg" viewBox="0 0 110 120" style="width:calc(var(--u)*1.000)"><path style="--i:10" d="M12 11 Q15 60 14 111"/><path style="--i:11" d="M37 11 Q39 63 37 110"/><path style="--i:12" d="M58 11 Q57 64 54 112"/><path style="--i:13" d="M81 8 Q78 60 80 111"/><path style="--i:14" d="M2 88 Q46 55 96 19"/></svg><svg class="tg" viewBox="0 0 110 120" style="width:calc(var(--u)*1.000)"><path style="--i:15" d="M13 8 Q10 60 12 113"/><path style="--i:16" d="M36 13 Q36 62 39 113"/><path style="--i:17" d="M57 13 Q57 59 61 107"/><path style="--i:18" d="M79 10 Q76 59 80 108"/><path style="--i:19" d="M2 90 Q52 59 96 25"/></svg><svg class="tg" viewBox="0 0 60 120" style="width:calc(var(--u)*0.545)"><path style="--i:20" d="M14 11 Q17 60 15 106"/><path style="--i:21" d="M37 12 Q35 62 37 109"/></svg></div>
+    <p class="tline"><span class="n" id="n22">22</span> brands built alongside their founders, from early stage to unicorn.</p>
   </div>
 </section>
 
@@ -369,6 +378,11 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
   }
   if (!reduce) setInterval(function(){ ti=(ti+1)%T.length; show(ti); }, 6000);
 
+  /* ---------- tally draws when seen ---------- */
+  var cnt=document.getElementById("count");
+  if (cnt && "IntersectionObserver" in window){
+    new IntersectionObserver(function(es,o){ es.forEach(function(e){ if(e.isIntersecting){ cnt.classList.add("go"); o.disconnect(); } }); },{threshold:.35}).observe(cnt);
+  }
   /* ---------- counter ---------- */
   var n = document.getElementById("n22");
   if (!reduce && "IntersectionObserver" in window){
@@ -397,7 +411,7 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
   fill("rowA", A); fill("rowB", B);
 
   /* ---------- ring of names ---------- */
-  document.getElementById("ringtext").textContent = ["Meraki Labs","SparX","New Religion","Ethera Diamonds","TechSpace","Pizza Hut","Urban Vault","Shipsy","Recotap"].join(" ✺ ") + " ✺";
+  var rt=document.getElementById("ringtext"); if(rt) rt.textContent = ["Meraki Labs","SparX","New Religion","Ethera Diamonds","TechSpace","Pizza Hut","Urban Vault","Shipsy","Recotap"].join(" ✺ ") + " ✺";
 
   /* ---------- scribble draws when seen ---------- */
   var brief=document.getElementById("brief");
