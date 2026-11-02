@@ -92,6 +92,20 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
 .end.band{padding:18vh 0 14vh}
 .end.band::before{background:radial-gradient(60% 70% at 50% 100%, rgba(222,15,63,.28), transparent 70%)}
 @media (prefers-reduced-motion:reduce){ .hero::before{animation:none} }
+/* Desktop: use the width, shorter hero so the work shows above the fold, bigger thumbnails. */
+@media (min-width:1024px){
+  .wrap{max-width:1180px; padding:0 48px}
+  .hero{padding:7vh 0 9vh; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:64px}
+  .hero h1{font-size:clamp(84px, 8.6vw, 136px)}
+  .hero .sub{max-width:520px; font-size:18px}
+  .hero .me{max-width:400px}
+  .voices.band{padding:40px 0 40px}
+  .v{padding:46px 0}
+  .v .res span{max-width:280px}
+  .shots{gap:16px}
+  .shots button{width:230px; height:300px}
+  .end.band{padding:14vh 0 12vh}
+}
 </style>
 </head>
 <body>
