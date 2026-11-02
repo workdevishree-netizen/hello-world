@@ -128,7 +128,7 @@ button{font-family:inherit}
 /* ---------- end ---------- */
 .end{padding-block:130px 110px; text-align:center}
 .end .big{font-size:clamp(90px, 20vw, 260px); color:var(--red)}
-.end .lede{font-size:clamp(20px, 2.6vw, 30px); margin-top:14px; text-wrap:balance}
+.end .lede{font-family:var(--cond); text-transform:uppercase; font-size:clamp(34px, 5vw, 64px); line-height:1; margin-top:0; text-wrap:balance; color:var(--ink)}
 .reach{margin-top:44px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
 .pill{display:inline-flex; align-items:center; gap:10px; border:2px solid var(--ink); border-radius:999px; padding:12px 20px; font-weight:500; font-size:15px; text-decoration:none; background:none; color:var(--ink); cursor:pointer; max-width:100%; overflow-wrap:anywhere}
 .pill.solid{background:var(--ink); color:var(--paper)}
@@ -358,7 +358,6 @@ body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:50
 
 <section class="band paper end" id="say-hi">
   <div class="in">
-    <h2 class="big">Curious<span class="q">?</span></h2>
     <p class="lede">Tell me what's been stuck in your head.</p>
     <div class="reach">
       <button class="pill solid" type="button" id="copy">work.devishree@gmail.com</button>
